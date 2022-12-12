@@ -1,1 +1,1 @@
-from .rotation_ip import Proxy
+from .ip_rotator import Proxy

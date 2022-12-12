@@ -34,10 +34,10 @@ class Proxy:
         self.id = 0
         self.updateIpList()
         self.session = requests.Session()
-        self.nextIp()
+        self.changeIp()
         # return session
         
-    def nextIp(self):
+    def changeIp(self):
         '''
         This Method Finds The Next Proxy Server That Is Available And Connects To It.
         '''

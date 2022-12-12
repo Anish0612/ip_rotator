@@ -1,10 +1,10 @@
 [project]
-name = "rotation_ip"
+name = "ip_rotator"
 version = "0.0.1"
 authors = [
   { name="Anish", email="anishshakthivelnadar@gmail.com" },
 ]
-description = "Change IP In Http Request"
+description = "Hides Your Ip address"
 readme = "README.md"
 requires-python = ">=3.7"
 classifiers = [
