@@ -1,4 +1,4 @@
-import requests
+import requests , time
 from bs4 import BeautifulSoup
 
 class Proxy:
@@ -23,6 +23,9 @@ class Proxy:
         '''
         This Method Pulls All Free Proxy Server From The Website https://free-proxy-list.net/.
         '''
+        print('update ip')
+        self.timeOfUpdate = time.time()
+        self.id = 0
         proxyList = requests.get('https://free-proxy-list.net/')
         soup = BeautifulSoup(proxyList.text,'lxml')
         self.listOfIp = soup.find('tbody').findAll('tr')
@@ -31,7 +34,6 @@ class Proxy:
         '''
         This Method Gathers All Available Free Proxy Servers And Establishes A Connection With Them.        
         '''
-        self.id = 0
         self.updateIpList()
         self.session = requests.Session()
         self.changeIp()
@@ -42,12 +44,16 @@ class Proxy:
         This Method Finds The Next Proxy Server That Is Available And Connects To It.
         '''
         while True:
-            try:
-                data = self.listOfIp[self.id].findAll('td')
-            except:
+            # try:
+            #     if 300 <= int(time.time() - self.timeOfUpdate):                  # update list every 5 min 
+            #         raise
+            #     data = self.listOfIp[self.id].findAll('td')
+            # except:
+            #     self.updateIpList()
+            #     continue
+            if 300 <= int(time.time() - self.timeOfUpdate):                  # update list every 5 min 
                 self.updateIpList()
-                self.id = 0
-                continue
+            data = self.listOfIp[self.id].findAll('td')
             self.currentIp = data[0].text
             proxyPort = data[1].text
             country = data[3].text

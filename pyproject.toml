@@ -1,10 +1,10 @@
 [project]
 name = "ip_rotator"
-version = "0.0.1"
+version = "1.0.0"
 authors = [
   { name="Anish", email="anishshakthivelnadar@gmail.com" },
 ]
-description = "Hides Your Ip address"
+description = "Hides Your Ip address in https requests"
 readme = "README.md"
 requires-python = ">=3.7"
 classifiers = [
@@ -20,8 +20,8 @@ dependencies = [
 ]
 
 [project.urls]
-"Homepage" = "https://github.com/Anish0612/rotation_ip"
-"Bug Tracker" = "https://github.com/Anish0612/rotation_ip/issues"
+"Homepage" = "https://github.com/Anish0612/ip_rotator"
+"Bug Tracker" = "https://github.com/Anish0612/ip_rotator/issues"
 
 
 [build-system]
