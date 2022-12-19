@@ -20,7 +20,7 @@ dependencies = [
 ]
 
 [tool.setuptools.dynamic]
-version = {attr = "my_package.VERSION"}
+version = {attr = "ip_rotator.VERSION"}
 
 [project.urls]
 "Homepage" = "https://github.com/Anish0612/ip_rotator"
