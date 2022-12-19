@@ -1,6 +1,5 @@
 [project]
 name = "ip_rotator"
-version = "1.0.0"
 authors = [
   { name="Anish", email="anishshakthivelnadar@gmail.com" },
 ]
@@ -12,12 +11,16 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
+dynamic = ["version"]
 
 dependencies = [
     "requests",
     "beautifulsoup4",
     "lxml"
 ]
+
+[tool.setuptools.dynamic]
+version = {attr = "my_package.VERSION"}
 
 [project.urls]
 "Homepage" = "https://github.com/Anish0612/ip_rotator"
