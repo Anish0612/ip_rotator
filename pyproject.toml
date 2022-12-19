@@ -11,7 +11,6 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
-dynamic = ["version"]
 
 dependencies = [
     "requests",
@@ -19,14 +18,13 @@ dependencies = [
     "lxml"
 ]
 
-[tool.setuptools.dynamic]
-version = {attr = "ip_rotator.VERSION"}
-
 [project.urls]
 "Homepage" = "https://github.com/Anish0612/ip_rotator"
 "Bug Tracker" = "https://github.com/Anish0612/ip_rotator/issues"
 
 
 [build-system]
-requires = ["setuptools"]
+requires = ["setuptools","setuptools_scm[toml]"]
 build-backend = "setuptools.build_meta"
+
+[tool.setuptools_scm]
